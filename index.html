@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Teacher's Day | Dedicated to Ma'am Sadia Riaz from Afshan Ahmed</title>
+  <meta name="description" content="A special, heartfelt Teacher's Day tribute website dedicated to Ma'am Sadia Riaz with deep gratitude and admiration, presented by her student Afshan Ahmed.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Nastaliq+Urdu:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Floating Particles Canvas -->
+  <canvas id="sparkle-canvas"></canvas>
+
+  <!-- Ambient Audio Floating Player -->
+  <div class="audio-controller" id="audio-controller">
+    <button id="audio-toggle-btn" class="audio-btn" aria-label="Toggle ambient celebration music" title="Toggle celebratory melody">
+      <span class="music-icon" id="music-icon">🎵</span>
+      <span class="music-label">Tribute Melody</span>
+      <div class="sound-wave" id="sound-wave">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </button>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <div class="nav-brand">
+        <span class="brand-crest">SR</span>
+        <div class="brand-text">
+          <span class="brand-title">Ma'am Sadia Riaz</span>
+          <span class="brand-sub">Honored by Afshan Ahmed</span>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#letter-section">Personal Letter</a></li>
+        <li><a href="#virtues-section">Mentor Virtues</a></li>
+        <li><a href="#poetry-section">Tribute Poetry</a></li>
+        <li><a href="#interactive-hub">Offer Flowers</a></li>
+        <li><a href="#certificate-section" class="nav-cta-btn">Honor Certificate</a></li>
+      </ul>
+      <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Open navigation menu">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-glow"></div>
+      <div class="container hero-container">
+        
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="badge-dot"></span>
+            <span>World Teachers' Day • 5th October</span>
+          </div>
+          
+          <h1 class="hero-title">
+            Happy Teacher's Day, <br>
+            <span class="gradient-text serif-text">Ma'am Sadia Riaz!</span>
+          </h1>
+          
+          <p class="hero-urdu-subtitle">
+            "استاد وہ عظیم ہستی ہے جو دلوں میں علم کی شمع روشن کرتی ہے"
+          </p>
+          
+          <p class="hero-description">
+            A mentor guides the mind, touches the heart, and inspires the soul forever. On this auspicious day, this special tribute is crafted with deepest respect, admiration, and prayers for you.
+          </p>
+
+          <div class="hero-dedication-card">
+            <div class="dedication-avatar">
+              <span>AA</span>
+            </div>
+            <div class="dedication-details">
+              <span class="dedication-caption">With eternal gratitude from your student:</span>
+              <strong class="student-name">Afshan Ahmed</strong>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <button id="celebrate-btn" class="btn btn-primary">
+              <span class="btn-icon">🎉</span> Celebrate Ma'am Sadia!
+            </button>
+            <a href="#letter-section" class="btn btn-secondary">
+              <span class="btn-icon">✉️</span> Read Heartfelt Letter
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num" id="bouquet-counter">350+</span>
+              <span class="stat-lbl">Virtual Roses Offered</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">∞</span>
+              <span class="stat-lbl">Respect & Gratitude</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">#1</span>
+              <span class="stat-lbl">Most Inspiring Teacher</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-card-wrapper" id="hero-card-3d">
+            <div class="visual-frame">
+              <img src="assets/teachers_day_hero.jpg" alt="Teacher's Day celebration tribute artwork showing an open glowing book and roses" class="hero-img" loading="eager">
+              <div class="visual-overlay"></div>
+              <div class="floating-seal">
+                <span class="seal-icon">✨</span>
+                <div class="seal-text">
+                  <span class="seal-top">HONORING EXCELLENCE</span>
+                  <span class="seal-name">Ma'am Sadia Riaz</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quote Banner -->
+    <section class="quote-banner">
+      <div class="container">
+        <blockquote class="cinematic-quote">
+          <span class="quote-mark">“</span>
+          <p class="quote-text">
+            A truly extraordinary teacher does not merely teach lessons from a syllabus; she awakens the mind, instills courage, and molds the future.
+          </p>
+          <cite class="quote-author">— Presented with reverence by Afshan Ahmed</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Personal Heartfelt Letter Section -->
+    <section class="letter-section" id="letter-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Dedicated From The Heart</span>
+          <h2 class="section-title">A Special Letter to Ma'am Sadia Riaz</h2>
+          <p class="section-sub">Words from your student Afshan Ahmed to express what a simple 'thank you' can never fully convey.</p>
+        </div>
+
+        <div class="envelope-container" id="envelope-wrapper">
+          <div class="envelope-interactive" id="envelope-interactive">
+            
+            <!-- Envelope Front / Closed State -->
+            <div class="envelope-cover" id="envelope-cover">
+              <div class="envelope-stamp">
+                <span class="stamp-post">TEACHER'S DAY 2026</span>
+                <span class="stamp-icon">🌹</span>
+              </div>
+              <div class="envelope-to-from">
+                <p class="envelope-recipient">
+                  <strong>To:</strong> Respected Ma'am Sadia Riaz<br>
+                  <span class="italic">Our Most Beloved & Esteemed Teacher</span>
+                </p>
+                <div class="envelope-wax-seal" id="wax-seal-btn" title="Click to open letter">
+                  <div class="wax-inner">SR</div>
+                  <span class="wax-hint">Tap to Open</span>
+                </div>
+                <p class="envelope-sender">
+                  <strong>From:</strong> Afshan Ahmed<br>
+                  <span class="italic">Your Ever-Grateful Student</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Opened Letter Content -->
+            <div class="letter-parchment" id="letter-content">
+              <div class="letter-header">
+                <span class="letter-date">October 5, 2026</span>
+                <div class="letter-badge">A Heartfelt Tribute</div>
+              </div>
+
+              <div class="letter-salutation">
+                <h3>Dearest & Most Respected Ma'am Sadia Riaz,</h3>
+                <p class="urdu-greeting">السلام علیکم و رحمتہ اللہ و برکاتہ</p>
+              </div>
+
+              <div class="letter-body">
+                <p>
+                  Today, on this glorious occasion of <strong>World Teachers' Day</strong>, I want to take a moment from the bottom of my heart to express my boundless appreciation, respect, and indebtedness to you.
+                </p>
+                
+                <p>
+                  Teachers come and go in life, but only a rare few leave an indelible footprint on our souls. <strong>Ma'am Sadia</strong>, your passion for imparting knowledge, your patient guidance, and your unwavering belief in your students have been a guiding lighthouse in my life.
+                </p>
+
+                <div class="letter-highlight-box">
+                  <p class="letter-urdu-quote">
+                    "استاد وہ چراغ ہے جو خود جل کر دوسروں کو روشنی دیتا ہے، آپ نے نہ صرف علم سکھایا بلکہ ہمیں زندگی گزارنے کا سلیقہ اور حوصلہ بھی بخشا ہے۔"
+                  </p>
+                </div>
+
+                <p>
+                  Whenever challenges seemed overwhelming, your words of encouragement gave me the strength to persevere. You never just taught the subjects; you taught us integrity, resilience, curiosity, and the true value of education.
+                </p>
+
+                <p>
+                  Thank you for every second of patience, every smile that eased our anxiety, and every piece of wisdom that will accompany me throughout my life. I pray that Almighty Allah blesses you with abundant health, perpetual joy, longevity, and supreme success in all walks of life.
+                </p>
+
+                <p class="letter-closing">
+                  With the utmost respect, admiration, and prayers,<br>
+                  <strong class="letter-signature">Afshan Ahmed</strong><br>
+                  <span class="signature-title">Proud & Thankful Student</span>
+                </p>
+              </div>
+
+              <div class="letter-actions">
+                <button class="btn btn-sm btn-outline" id="copy-letter-btn">
+                  📋 Copy Letter Text
+                </button>
+                <button class="btn btn-sm btn-primary" id="reclose-letter-btn">
+                  ✉️ Fold Envelope
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Virtues / Reasons Why Ma'am Sadia is Exceptional -->
+    <section class="virtues-section" id="virtues-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Excellence In Mentorship</span>
+          <h2 class="section-title">The Hallmarks of Ma'am Sadia's Guidance</h2>
+          <p class="section-sub">Qualities that make Ma'am Sadia Riaz a beacon of light for all her students.</p>
+        </div>
+
+        <div class="virtues-grid">
+          
+          <div class="virtue-card">
+            <div class="virtue-icon-box">
+              <span>💡</span>
+            </div>
+            <h3 class="virtue-title">Illuminating Wisdom</h3>
+            <p class="virtue-urdu">علم کی روشنی اور دانائی</p>
+            <p class="virtue-desc">
+              Possessing a rare gift to take the most intricate and difficult topics, unraveling them with crystalline clarity and inspiring genuine curiosity.
+            </p>
+            <div class="virtue-tag">Deep Knowledge</div>
+          </div>
+
+          <div class="virtue-card">
+            <div class="virtue-icon-box">
+              <span>💖</span>
+            </div>
+            <h3 class="virtue-title">Boundless Patience</h3>
+            <p class="virtue-urdu">صبر، شفقت اور ہمدردی</p>
+            <p class="virtue-desc">
+              Always welcoming questions with warmth, never tiring, and treating every student's learning journey with unparalleled kindness and empathy.
+            </p>
+            <div class="virtue-tag">Compassion</div>
+          </div>
+
+          <div class="virtue-card">
+            <div class="virtue-icon-box">
+              <span>🚀</span>
+            </div>
+            <h3 class="virtue-title">Inspiring Confidence</h3>
+            <p class="virtue-urdu">حوصلہ افزائی اور خود اعتمادی</p>
+            <p class="virtue-desc">
+              Seeing the hidden potential in us before we even believed in ourselves, instilling courage to aim high and conquer fears.
+            </p>
+            <div class="virtue-tag">Empowerment</div>
+          </div>
+
+          <div class="virtue-card">
+            <div class="virtue-icon-box">
+              <span>🌱</span>
+            </div>
+            <h3 class="virtue-title">Character & Moral Values</h3>
+            <p class="virtue-urdu">اخلاق و کردار سازی</p>
+            <p class="virtue-desc">
+              Teaching not just academic curricula, but life lessons, honesty, dedication, and humbleness through personal example.
+            </p>
+            <div class="virtue-tag">True Role Model</div>
+          </div>
+
+          <div class="virtue-card">
+            <div class="virtue-icon-box">
+              <span>📚</span>
+            </div>
+            <h3 class="virtue-title">Dedication to Teaching</h3>
+            <p class="virtue-urdu">تعلیم کے لیے بے لوث محنت</p>
+            <p class="virtue-desc">
+              Pouring heart and soul into every lecture, ensuring no student is left behind, and turning every classroom session into a meaningful experience.
+            </p>
+            <div class="virtue-tag">Passionate Spirit</div>
+          </div>
+
+          <div class="virtue-card">
+            <div class="virtue-icon-box">
+              <span>🌟</span>
+            </div>
+            <h3 class="virtue-title">Everlasting Impact</h3>
+            <p class="virtue-urdu">زندگی بھر کا اثر</p>
+            <p class="virtue-desc">
+              The lessons and guidance imparted by Ma'am Sadia Riaz will continue to shape our future decisions, goals, and achievements for years to come.
+            </p>
+            <div class="virtue-tag">Legacy of Grace</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Poetry & Shers Section -->
+    <section class="poetry-section" id="poetry-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">خراجِ تحسین • Poetic Tribute</span>
+          <h2 class="section-title">Words of Reverence & Poetry</h2>
+          <p class="section-sub">Timeless verses in honor of our most esteemed mentor, Ma'am Sadia Riaz.</p>
+        </div>
+
+        <div class="poetry-cards-wrapper">
+          
+          <div class="poetry-card primary-poetry">
+            <div class="poetry-decor">🌸</div>
+            <div class="urdu-couplet">
+              <p class="sher-line">ادب تعلیم کا جوہر ہے زیور ہے جوانی کا</p>
+              <p class="sher-line">وہی شاگرد ہیں جو خدمتِ استاد کرتے ہیں</p>
+            </div>
+            <hr class="poetry-divider">
+            <p class="english-translation">
+              "Respect is the essence of education and the adornment of youth;<br>
+              Blessed are those pupils who hold their teachers in eternal high regard."
+            </p>
+            <div class="poetry-footer">Dedicated with respect by Afshan Ahmed</div>
+          </div>
+
+          <div class="poetry-card">
+            <div class="poetry-decor">📖</div>
+            <div class="urdu-couplet">
+              <p class="sher-line">ترا ہر لفظ راہِ حق کی جانب رہنمائی ہے</p>
+              <p class="sher-line">یہ علم و آگہی سب آپ ہی کی آشنائی ہے</p>
+            </div>
+            <hr class="poetry-divider">
+            <p class="english-translation">
+              "Every word of yours guides towards the path of truth;<br>
+              This light of wisdom and awareness is a gift of your mentorship."
+            </p>
+            <div class="poetry-footer">For Ma'am Sadia Riaz</div>
+          </div>
+
+          <div class="poetry-card">
+            <div class="poetry-decor">✨</div>
+            <div class="quote-in-poetry">
+              <p class="english-quote-bold">
+                "One child, one teacher, one book, and one pen can change the world."
+              </p>
+              <p class="english-quote-sub">
+                Thank you, Ma'am Sadia, for being the teacher who changes lives every single day with dignity, grace, and unmatched devotion.
+              </p>
+            </div>
+            <div class="poetry-footer">Happy Teachers' Day 2026</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Activity & Blessings Hub -->
+    <section class="interactive-hub" id="interactive-hub">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Interactive Tribute</span>
+          <h2 class="section-title">Send Blessings & Virtual Flowers</h2>
+          <p class="section-sub">Interact below to shower Ma'am Sadia with bouquets, light the candle of knowledge, and send heartfelt prayers.</p>
+        </div>
+
+        <div class="hub-grid">
+          
+          <!-- Card 1: Virtual Flower Shower -->
+          <div class="hub-card" id="flower-hub-card">
+            <div class="hub-card-header">
+              <span class="hub-emoji">💐</span>
+              <h3>Offer Fresh Roses</h3>
+            </div>
+            <p>Click the button below to send fresh blooming pink roses and jasmine to Ma'am Sadia Riaz.</p>
+            <div class="counter-display">
+              <span class="counter-label">Bouquets sent today:</span>
+              <span class="counter-value" id="flower-count">108</span>
+            </div>
+            <button id="send-flower-btn" class="btn btn-flower">
+              🌹 Offer a Rose to Ma'am Sadia
+            </button>
+            <div class="flower-tray" id="flower-tray"></div>
+          </div>
+
+          <!-- Card 2: Candle of Knowledge -->
+          <div class="hub-card" id="candle-hub-card">
+            <div class="hub-card-header">
+              <span class="hub-emoji">🕯️</span>
+              <h3>The Candle of Knowledge</h3>
+            </div>
+            <p>A teacher is like a candle that illuminates the path for others. Light this digital candle in tribute to Ma'am Sadia.</p>
+            
+            <div class="candle-stage" id="candle-stage">
+              <div class="candle-stick">
+                <div class="candle-wick"></div>
+                <div class="candle-flame lit" id="candle-flame"></div>
+                <div class="candle-glow" id="candle-glow"></div>
+              </div>
+            </div>
+
+            <button id="toggle-candle-btn" class="btn btn-secondary">
+              ✨ Reignite / Bless Candle
+            </button>
+            <p class="candle-status" id="candle-status">Candle of Gratitude is Glowing Brightly!</p>
+          </div>
+
+          <!-- Card 3: Blessings & Prayers Generator -->
+          <div class="hub-card" id="prayer-hub-card">
+            <div class="hub-card-header">
+              <span class="hub-emoji">🤲</span>
+              <h3>Dua & Blessings Wall</h3>
+            </div>
+            <p>Click below to generate and send a special prayer from Afshan Ahmed for Ma'am Sadia.</p>
+            
+            <div class="dua-display-box" id="dua-display">
+              <p class="dua-urdu" id="dua-urdu">
+                "یا اللہ! ہماری استاد محترمہ سعدیہ ریاض کو صحتِ کاملہ، لمبی عمر اور دونوں جہانوں کی کامیابی عطا فرما۔ آمین!"
+              </p>
+              <p class="dua-eng" id="dua-eng">
+                "May Allah Almighty bless Respected Ma'am Sadia Riaz with vibrant health, peace of heart, happiness, and eternal success. Ameen!"
+              </p>
+            </div>
+
+            <div class="dua-actions">
+              <button id="new-dua-btn" class="btn btn-outline">
+                🔄 Another Prayer
+              </button>
+              <button id="say-ameen-btn" class="btn btn-primary">
+                ❤️ Say Ameen!
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificate of Honor (Downloadable / Printable) -->
+    <section class="certificate-section" id="certificate-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Formal Recognition</span>
+          <h2 class="section-title">Certificate of Invaluable Mentorship</h2>
+          <p class="section-sub">A formal token of appreciation presented to Ma'am Sadia Riaz by student Afshan Ahmed.</p>
+        </div>
+
+        <div class="certificate-wrapper" id="printable-certificate">
+          <div class="cert-outer-border">
+            <div class="cert-inner-border">
+              
+              <!-- Corner Ornaments -->
+              <div class="cert-corner tl">❖</div>
+              <div class="cert-corner tr">❖</div>
+              <div class="cert-corner bl">❖</div>
+              <div class="cert-corner br">❖</div>
+
+              <div class="cert-header">
+                <span class="cert-pretitle">WORLD TEACHERS' DAY 2026</span>
+                <h2 class="cert-main-title">Certificate of Invaluable Mentorship</h2>
+                <span class="cert-subtitle">& Distinction in Teaching Excellence</span>
+              </div>
+
+              <div class="cert-medal-box">
+                <img src="assets/teacher_award_badge.jpg" alt="Excellence in Achievement Gold Medal Seal" class="cert-medal-img">
+              </div>
+
+              <div class="cert-presented-to">
+                <span class="cert-lead">This Prestigious Certificate is Joyfully & Proudly Presented to:</span>
+                <h1 class="cert-recipient-name">Respected Ma'am Sadia Riaz</h1>
+                <div class="cert-line"></div>
+              </div>
+
+              <div class="cert-body">
+                <p>
+                  In recognition of your exceptional dedication, inspiring guidance, and invaluable contributions to nurturing knowledge, character, and intellect. Your wisdom and patience have made an indelible difference in the lives of your students.
+                </p>
+              </div>
+
+              <div class="cert-footer">
+                <div class="cert-sign-col">
+                  <div class="cert-sign-line"></div>
+                  <strong class="cert-sign-name">Afshan Ahmed</strong>
+                  <span class="cert-sign-role">Presented With Deep Gratitude (Student)</span>
+                </div>
+
+                <div class="cert-seal-col">
+                  <div class="cert-gold-seal">
+                    <span class="gold-seal-star">★ ★ ★</span>
+                    <span class="gold-seal-text">BEST TEACHER<br>AWARD</span>
+                    <span class="gold-seal-year">2026</span>
+                  </div>
+                </div>
+
+                <div class="cert-sign-col">
+                  <div class="cert-sign-line"></div>
+                  <strong class="cert-sign-name">October 5, 2026</strong>
+                  <span class="cert-sign-role">Official Date of Celebration</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="certificate-controls text-center">
+          <button id="print-cert-btn" class="btn btn-primary btn-lg">
+            🖨️ Print / Save Certificate as PDF
+          </button>
+          <button id="share-tribute-btn" class="btn btn-secondary btn-lg">
+            🔗 Copy Tribute Web Page Link
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Ma'am Sadia Riaz</h3>
+          <p>Inspiring minds, touching hearts, and illuminating futures.</p>
+        </div>
+        <div class="footer-dedication">
+          <p>Lovingly created and dedicated by your student:</p>
+          <h4>Afshan Ahmed</h4>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>© 2026 World Teachers' Day Celebration • All Respect & Honor to Ma'am Sadia Riaz.</p>
+        <p class="footer-blessing">"May the light of education forever shine bright."</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification element -->
+  <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
