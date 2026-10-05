@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Happy Teacher's Day | Dedicated to Ma'am Sadia Riaz from Afshan Ahmed</title>
   <meta name="description" content="A special, heartfelt Teacher's Day tribute website dedicated to Ma'am Sadia Riaz with deep gratitude and admiration, presented by her student Afshan Ahmed.">
   
@@ -42,22 +42,31 @@
   <!-- Navigation Bar -->
   <header class="site-header">
     <nav class="nav-container">
-      <div class="nav-brand">
+      <a href="#hero" class="nav-brand" aria-label="Home">
         <span class="brand-crest">SR</span>
         <div class="brand-text">
           <span class="brand-title">Ma'am Sadia Riaz</span>
           <span class="brand-sub">Honored by Afshan Ahmed</span>
         </div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#letter-section">Personal Letter</a></li>
-        <li><a href="#virtues-section">Mentor Virtues</a></li>
-        <li><a href="#poetry-section">Tribute Poetry</a></li>
-        <li><a href="#interactive-hub">Offer Flowers</a></li>
-        <li><a href="#certificate-section" class="nav-cta-btn">Honor Certificate</a></li>
+      </a>
+
+      <!-- Hamburger Menu Toggle Button -->
+      <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#letter-section" class="nav-link-item">Personal Letter</a></li>
+        <li><a href="#virtues-section" class="nav-link-item">Mentor Virtues</a></li>
+        <li><a href="#poetry-section" class="nav-link-item">Tribute Poetry</a></li>
+        <li><a href="#interactive-hub" class="nav-link-item">Offer Flowers</a></li>
+        <li><a href="#certificate-section" class="nav-link-item nav-cta-btn">Honor Certificate</a></li>
       </ul>
-      <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Open navigation menu">☰</button>
     </nav>
+    <div class="nav-backdrop" id="nav-backdrop"></div>
   </header>
 
   <main>
@@ -107,7 +116,7 @@
           <div class="hero-stats">
             <div class="stat-item">
               <span class="stat-num" id="bouquet-counter">350+</span>
-              <span class="stat-lbl">Virtual Roses Offered</span>
+              <span class="stat-lbl">Virtual Roses</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
@@ -117,7 +126,7 @@
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-num">#1</span>
-              <span class="stat-lbl">Most Inspiring Teacher</span>
+              <span class="stat-lbl">Inspiring Teacher</span>
             </div>
           </div>
         </div>
@@ -125,7 +134,7 @@
         <div class="hero-visual">
           <div class="visual-card-wrapper" id="hero-card-3d">
             <div class="visual-frame">
-              <img src="assets/teachers_day_hero.jpg" alt="Teacher's Day celebration tribute artwork showing an open glowing book and roses" class="hero-img" loading="eager">
+              <img src="assets/teachers_day_hero.jpg" alt="Teacher's Day celebration tribute artwork showing an open glowing book and roses" class="hero-img" loading="eager" width="1280" height="720">
               <div class="visual-overlay"></div>
               <div class="floating-seal">
                 <span class="seal-icon">✨</span>
@@ -173,18 +182,18 @@
                 <span class="stamp-icon">🌹</span>
               </div>
               <div class="envelope-to-from">
-                <p class="envelope-recipient">
+                <div class="envelope-recipient">
                   <strong>To:</strong> Respected Ma'am Sadia Riaz<br>
                   <span class="italic">Our Most Beloved & Esteemed Teacher</span>
-                </p>
-                <div class="envelope-wax-seal" id="wax-seal-btn" title="Click to open letter">
+                </div>
+                <div class="envelope-wax-seal" id="wax-seal-btn" title="Click to open letter" role="button" tabindex="0" aria-label="Open letter from Afshan Ahmed">
                   <div class="wax-inner">SR</div>
                   <span class="wax-hint">Tap to Open</span>
                 </div>
-                <p class="envelope-sender">
+                <div class="envelope-sender">
                   <strong>From:</strong> Afshan Ahmed<br>
                   <span class="italic">Your Ever-Grateful Student</span>
-                </p>
+                </div>
               </div>
             </div>
 
@@ -223,11 +232,11 @@
                   Thank you for every second of patience, every smile that eased our anxiety, and every piece of wisdom that will accompany me throughout my life. I pray that Almighty Allah blesses you with abundant health, perpetual joy, longevity, and supreme success in all walks of life.
                 </p>
 
-                <p class="letter-closing">
+                <div class="letter-closing">
                   With the utmost respect, admiration, and prayers,<br>
                   <strong class="letter-signature">Afshan Ahmed</strong><br>
                   <span class="signature-title">Proud & Thankful Student</span>
-                </p>
+                </div>
               </div>
 
               <div class="letter-actions">
@@ -483,10 +492,10 @@
             <div class="cert-inner-border">
               
               <!-- Corner Ornaments -->
-              <div class="cert-corner tl">❖</div>
-              <div class="cert-corner tr">❖</div>
-              <div class="cert-corner bl">❖</div>
-              <div class="cert-corner br">❖</div>
+              <div class="cert-corner tl" aria-hidden="true">❖</div>
+              <div class="cert-corner tr" aria-hidden="true">❖</div>
+              <div class="cert-corner bl" aria-hidden="true">❖</div>
+              <div class="cert-corner br" aria-hidden="true">❖</div>
 
               <div class="cert-header">
                 <span class="cert-pretitle">WORLD TEACHERS' DAY 2026</span>
@@ -495,7 +504,7 @@
               </div>
 
               <div class="cert-medal-box">
-                <img src="assets/teacher_award_badge.jpg" alt="Excellence in Achievement Gold Medal Seal" class="cert-medal-img">
+                <img src="assets/teacher_award_badge.jpg" alt="Excellence in Achievement Gold Medal Seal" class="cert-medal-img" width="110" height="110">
               </div>
 
               <div class="cert-presented-to">

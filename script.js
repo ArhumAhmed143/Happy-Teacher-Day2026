@@ -50,7 +50,7 @@ function initSparkleCanvas() {
     height = canvas.height = window.innerHeight;
   });
 
-  const particleCount = Math.min(width < 768 ? 40 : 80, 100);
+  const particleCount = Math.min(width < 768 ? 35 : 75, 90);
   const particles = [];
 
   class Sparkle {
@@ -123,20 +123,19 @@ function fireConfettiCelebration() {
   setTimeout(() => playChimeSound(1100, 'sine', 0.4), 240);
 
   if (typeof confetti === 'function') {
-    // Left & Right celebratory cannons
     const end = Date.now() + 1500;
     const colors = ['#f59e0b', '#fbbf24', '#f43f5e', '#fb7185', '#ffffff', '#8b5cf6'];
 
     (function frame() {
       confetti({
-        particleCount: 5,
+        particleCount: 4,
         angle: 60,
         spread: 55,
         origin: { x: 0, y: 0.7 },
         colors: colors
       });
       confetti({
-        particleCount: 5,
+        particleCount: 4,
         angle: 120,
         spread: 55,
         origin: { x: 1, y: 0.7 },
@@ -148,7 +147,6 @@ function fireConfettiCelebration() {
       }
     })();
   } else {
-    // Pure DOM fallback if CDN blocked
     createDOMConfetti();
   }
 }
@@ -156,13 +154,13 @@ function fireConfettiCelebration() {
 function createDOMConfetti() {
   const container = document.body;
   const emojis = ['🎉', '🌹', '✨', '⭐', '🌸', '💐'];
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 24; i++) {
     const el = document.createElement('div');
     el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
     el.style.position = 'fixed';
-    el.style.left = Math.random() * 100 + 'vw';
+    el.style.left = Math.random() * 95 + 'vw';
     el.style.top = '-20px';
-    el.style.fontSize = Math.random() * 20 + 20 + 'px';
+    el.style.fontSize = Math.random() * 18 + 18 + 'px';
     el.style.zIndex = '9999';
     el.style.pointerEvents = 'none';
     el.style.transition = 'transform 2.5s ease-out, opacity 2.5s ease';
@@ -198,7 +196,7 @@ function initLetterInteraction() {
   const copyLetterBtn = document.getElementById('copy-letter-btn');
 
   function openLetter() {
-    playChimeSound(523.25, 'triangle', 0.35); // Gentle paper chime
+    playChimeSound(523.25, 'triangle', 0.35);
     envelopeCover.style.display = 'none';
     letterContent.classList.add('opened');
     showToast("💌 Letter from Afshan Ahmed opened with love & respect.");
@@ -213,7 +211,19 @@ function initLetterInteraction() {
     }, 300);
   }
 
-  if (waxSealBtn) waxSealBtn.addEventListener('click', openLetter);
+  if (waxSealBtn) {
+    waxSealBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openLetter();
+    });
+    waxSealBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLetter();
+      }
+    });
+  }
+
   if (envelopeCover) envelopeCover.addEventListener('click', openLetter);
   if (recloseBtn) recloseBtn.addEventListener('click', closeLetter);
 
@@ -241,29 +251,32 @@ October 5, 2026`;
 }
 
 /* ==========================================================================
-   5. 3D Card Hover Tilt Effect
+   5. 3D Card Hover Tilt Effect (Desktop only)
    ========================================================================== */
 function init3DCardTilt() {
   const card = document.getElementById('hero-card-3d');
   if (!card) return;
 
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+  // Only apply tilt on hover-capable devices
+  if (window.matchMedia('(hover: hover)').matches) {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
 
-    const rotateX = ((y - centerY) / centerY) * -12;
-    const rotateY = ((x - centerX) / centerX) * 12;
+      const rotateX = ((y - centerY) / centerY) * -10;
+      const rotateY = ((x - centerX) / centerX) * 10;
 
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-  });
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
 
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-  });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+  }
 }
 
 /* ==========================================================================
@@ -287,19 +300,16 @@ function initFlowerHub() {
 
     playChimeSound(784, 'sine', 0.2);
 
-    // Add flower to tray
     const randomFlower = flowerIcons[Math.floor(Math.random() * flowerIcons.length)];
     const span = document.createElement('span');
     span.className = 'tray-flower';
     span.textContent = randomFlower;
     flowerTray.appendChild(span);
 
-    // Limit tray items to prevent overflow
-    if (flowerTray.children.length > 24) {
+    if (flowerTray.children.length > 20) {
       flowerTray.removeChild(flowerTray.firstChild);
     }
 
-    // Floating flower animation
     spawnFloatingFlower(e.clientX || window.innerWidth / 2, e.clientY || window.innerHeight / 2, randomFlower);
 
     showToast(`🌹 Beautiful ${randomFlower} offered to Ma'am Sadia Riaz!`);
@@ -310,17 +320,17 @@ function spawnFloatingFlower(x, y, icon) {
   const el = document.createElement('div');
   el.textContent = icon;
   el.style.position = 'fixed';
-  el.style.left = `${x - 15}px`;
+  el.style.left = `${Math.max(10, Math.min(window.innerWidth - 40, x - 15))}px`;
   el.style.top = `${y - 15}px`;
-  el.style.fontSize = '2.2rem';
+  el.style.fontSize = '2rem';
   el.style.zIndex = '9999';
   el.style.pointerEvents = 'none';
   el.style.transition = 'transform 1.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.8s ease';
   document.body.appendChild(el);
 
   requestAnimationFrame(() => {
-    const randomOffset = (Math.random() - 0.5) * 160;
-    el.style.transform = `translate(${randomOffset}px, -200px) scale(1.4) rotate(${randomOffset}deg)`;
+    const randomOffset = (Math.random() - 0.5) * 120;
+    el.style.transform = `translate(${randomOffset}px, -180px) scale(1.3) rotate(${randomOffset}deg)`;
     el.style.opacity = '0';
   });
 
@@ -466,7 +476,7 @@ function playChimeSound(freq = 440, type = 'sine', duration = 0.3) {
     osc.start();
     osc.stop(audioCtx.currentTime + duration);
   } catch (e) {
-    // Audio context silently ignored if restricted
+    // Audio silently ignored if unsupported
   }
 }
 
@@ -477,7 +487,6 @@ function initAmbientMelody() {
 
   if (!toggleBtn) return;
 
-  // Soothing pentatonic notes in C major / A minor
   const melodyNotes = [
     523.25, // C5
     587.33, // D5
@@ -521,26 +530,40 @@ function initAmbientMelody() {
 }
 
 /* ==========================================================================
-   11. Mobile Menu Toggle
+   11. Robust Mobile Menu Controller
    ========================================================================== */
 function initMobileMenu() {
   const toggle = document.getElementById('menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  const navLinks = document.getElementById('nav-links');
+  const backdrop = document.getElementById('nav-backdrop');
 
   if (!toggle || !navLinks) return;
 
-  toggle.addEventListener('click', () => {
-    const isVisible = navLinks.style.display === 'flex';
-    navLinks.style.display = isVisible ? 'none' : 'flex';
-    if (!isVisible) {
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '100%';
-      navLinks.style.left = '0';
-      navLinks.style.width = '100%';
-      navLinks.style.background = 'rgba(7, 9, 19, 0.96)';
-      navLinks.style.padding = '1.5rem';
-      navLinks.style.borderBottom = '1px solid var(--border-gold)';
+  function toggleMenu(show) {
+    const isOpen = typeof show === 'boolean' ? show : !navLinks.classList.contains('open');
+    if (isOpen) {
+      navLinks.classList.add('open');
+      toggle.classList.add('active');
+      toggle.setAttribute('aria-expanded', 'true');
+      if (backdrop) backdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    } else {
+      navLinks.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (backdrop) backdrop.classList.remove('open');
+      document.body.style.overflow = '';
     }
+  }
+
+  toggle.addEventListener('click', () => toggleMenu());
+  if (backdrop) backdrop.addEventListener('click', () => toggleMenu(false));
+
+  // Close menu when any navigation link is clicked
+  const linkItems = navLinks.querySelectorAll('a');
+  linkItems.forEach(link => {
+    link.addEventListener('click', () => {
+      toggleMenu(false);
+    });
   });
 }
